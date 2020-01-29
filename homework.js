@@ -6,14 +6,45 @@
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
+let people = ['Cadence', 'Ordel', 'Marion', 'Lad', 'Ordel']
+
+function remove(a, b) {
+    let aCopy = a.slice()
+        if (aCopy.includes(b) === true) {
+            for (const element of aCopy) {
+                if (element === b) {
+                    aCopy.splice(aCopy.indexOf(element), 1) }
+                        } }
+        console.log(aCopy)
+        console.log(a)
+        return aCopy
+}
+
+remove(people, "Ordel")
+
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
 
+
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
+let numbers = []  
+    function sum(array) {
+    if (array.length > 1) {
+        let reducer = 0
+         reducer = array.reduce((accumulator, currentValue) =>
+            accumulator + currentValue)
+                return reducer }
+                    else if (array.length == 1) {
+                        return array[0]
+                            } else return 0
+    }
+sum(numbers)
+    
 
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
+
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
