@@ -6,48 +6,71 @@
 // If the potential member is not in the array, return the array unchanged.
 // If the potential member is in the array, remove all instances of it from the array.
 
-let people = ['Cadence', 'Ordel', 'Marion', 'Lad', 'Ordel']
-
+let people = ["Cadence", "Ordel", "Marion", "Lad", "Ordel"];
 function remove(a, b) {
-    let aCopy = a.slice()
-        if (aCopy.includes(b) === true) {
-            for (const element of aCopy) {
-                if (element === b) {
-                    aCopy.splice(aCopy.indexOf(element), 1) }
-                        } }
-        console.log(aCopy)
-        console.log(a)
-        return aCopy
+  let aCopy = a.slice();
+  if (aCopy.includes(b) === true) {
+    for (const element of aCopy) {
+      if (element === b) {
+        aCopy.splice(aCopy.indexOf(element), 1);
+      }
+    }
+  }
+  console.log(aCopy);
+  console.log(a);
+  return aCopy;
 }
-
-remove(people, "Ordel")
+remove(people, "Ordel");
 
 // 2. Revisit your "remove" function. Make sure that it does not change the original
 // array but instead returns a new array.
 
-
 // 3. Create a function called "sum" that takes an array of numbers and
 // returns the sum of those numbers.
-let numbers = []  
-    function sum(array) {
-    if (array.length > 1) {
-        let reducer = 0
-         reducer = array.reduce((accumulator, currentValue) =>
-            accumulator + currentValue)
-                return reducer }
-                    else if (array.length == 1) {
-                        return array[0]
-                            } else return 0
-    }
-sum(numbers)
-    
+
+let numbers = [];
+function sum(array) {
+  if (array.length > 1) {
+    let reducer = 0;
+    reducer = array.reduce(
+      (accumulator, currentValue) => accumulator + currentValue
+    );
+    return reducer;
+  } else if (array.length == 1) {
+    return array[0];
+  }
+  return 0;
+}
+sum(numbers);
 
 // 4. Create a function called "average" that takes an array of numbers
 // and returns the average of those numbers.
-
+let a = [1, 3, 4];
+function average(array) {
+  if (array.length > 1) {
+    reducer = array.reduce(
+      (accumulator, currentValue) => accumulator + currentValue
+    );
+    return (reducer / array.length);
+  }
+  return array[0];
+}
+average(a);
 
 // 5. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+let someArray = [5, 6, 9, 6, 4];
+function minimum(array) {
+    if (array.length !== 1) {
+  let smallestNumber = array[0];
+  for (let number of array) {
+    if (number < smallestNumber) {
+      smallestNumber = number;
+      return smallestNumber; }
+    }
+  } return array[0]
+}
+minimum(someArray);
 
 // 6. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
@@ -72,6 +95,7 @@ sum(numbers)
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
+// use array.sort look at mdn article
 
 // 7. Create a function called `textList` that takes an array and joins its elements
 // into a string separated by commas.
